@@ -1,0 +1,26 @@
+
+/* LWS Overhaul debug messages. Can be independently enabled/disabled via the Suppress directive in XComEngine.ini */
+`define LWDebug(msg,cond,tag) `Log(`msg, class'Helpers_LW'.default.EnableLWDebug, 'LWDebug')
+
+/* LWS Overhaul trace messages, e.g. super log spam with lots of detail. Can be independently enabled/disabled via the Suppress directive in XComEngine.ini */
+`define LWTrace(msg,cond,tag) `Log(`msg, class'Helpers_LW'.default.EnableLWTrace, 'LWTrace')
+
+`define LWDiversityTrace(msg,cond,tag) `Log(`msg, class'Helpers_LW'.default.EnableLWDiversityTrace, 'LWDiversityTrace')
+
+`define LWOUTPOSTMGR class'XComGameState_LWOutpostManager'.static.GetOutpostManager()
+
+`define LWSQUADMGR class'XComGameState_LWSquadManager'.static.GetSquadManager()
+
+`define LWACTIVITYMGR class'XComGameState_LWAlienActivityManager'.static.GetAlienActivityManager()
+
+`define LWOVERHAULOPTIONS class'XComGameState_LWOverhaulOptions'.static.GetLWOverhaulOptions()
+
+`define LWPODMGR class'XComGameState_LWPodManager'.static.GetPodManager()
+
+/* Pod Manager tracing */
+`define LWPMTrace(msg, cond, tag) `Log(`msg, class'Helpers_LW'.default.EnableLWPMTrace, 'LWPMTrace')
+
+`define DYNAMIC_ID_PROP(propset,prop) `XCOMHISTORY.GetGameStateForObjectID(class'X2StrategyGameRulesetDataStructures'.static.GetDynamicIntProperty(`propset, `prop))
+`define DYNAMIC_ALERT_PROP(alert,prop) `XCOMHISTORY.GetGameStateForObjectID(class'X2StrategyGameRulesetDataStructures'.static.GetDynamicIntProperty(`alert.DisplayPropertySet, `prop))
+
+`define MIN_INFIL_FOR_CONCEAL class'X2DownloadableContentInfo_LongWarOfTheChosen'.default.MINIMUM_INFIL_FOR_CONCEAL
